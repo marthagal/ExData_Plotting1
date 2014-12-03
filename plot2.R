@@ -1,7 +1,9 @@
 library(lubridate)
 
+# read table
 power <- read.table("household_power_consumption.txt", sep=";", header=TRUE)
 
+# change date and time fields; other fields to numeric
 power$DateSub <- as.character(power$Date)
 datePower <- subset(power, DateSub == "1/2/2007" | DateSub == "2/2/2007")
 datePower$DateSub <- NULL
